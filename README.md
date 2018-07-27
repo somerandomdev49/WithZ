@@ -4,7 +4,7 @@ For now you can only move the camera using WASD.
 ### how to use:
 (example in file main.java)
 ```java
-Camera cam = new Camera(new Position(0, 0, -50)); // Creating Camara and setting it's position
+Camera cam = new Camera(new Position(0, 0, -50)); // Creating Camera and setting it's position
 ArrayList<Vertex> obj_vertices = new ArrayList<Vertex>() {{ // points for 1st object.
     add(new Vertex(new Position(100, 50, 150))); // setting vertex positions
     add(new Vertex(new Position(100, 80 ,150)));

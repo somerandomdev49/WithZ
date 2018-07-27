@@ -60,8 +60,10 @@ public class WorldWindow extends JFrame {
         //super.paintComponents(g2);
         Graphics2D g = (Graphics2D) g2;
         //System.out.print("paint");
-        g.setColor(new Color(255, 90, 90));
-        g.fillOval(this.world.cam.position.x, this.world.cam.position.y, 10, 10);
+        g.setColor(new Color(255, 255, 255));
+        g.fillRect(10, 10, 800, 800);
+
+        //g.fillOval(this.world.cam.position.x, this.world.cam.position.y, 10, 10);
         g.setColor(new Color(0, 0, 0));
         ArrayList<ArrayList<Vertex>> renderedObjects = this.world.cam.Render();
         System.out.println("rendered vertices length: " + renderedObjects.size());
@@ -83,6 +85,9 @@ public class WorldWindow extends JFrame {
                 }
                 /*vertex.renderedConnection.position.x, vertex.renderedConnection.position.y); */
             }
+            g.drawString("X: " + String.valueOf(this.world.cam.position.x), 400, 50);
+            g.drawString("Y: " + String.valueOf(this.world.cam.position.y), 400, 60);
+            g.drawString("Z: " + String.valueOf(this.world.cam.position.z), 400, 70);
         }
 
     }
