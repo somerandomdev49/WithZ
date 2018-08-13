@@ -1,4 +1,4 @@
-package com.mikeDev49;
+package com.withZ;
 
 import java.awt.event.KeyEvent;
 
@@ -9,4 +9,5 @@ interface GameKeys {
     int KEY_DOWN = KeyEvent.VK_E;
     int KEY_LEFT = KeyEvent.VK_A;
     int KEY_RIGHT = KeyEvent.VK_D;
+    int KEY_RESET = KeyEvent.VK_R;
 }

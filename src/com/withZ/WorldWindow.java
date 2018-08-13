@@ -59,6 +59,7 @@ public class WorldWindow extends JFrame {
 
             }
         });
+        setVisible(true);
     }
     public void paint(Graphics g2) {
         //super.paintComponents(g2);
@@ -107,4 +108,5 @@ public class WorldWindow extends JFrame {
         g3.drawImage(graphics.getScaledInstance(800, 800, 0), 0, 0, this);
         //g3.draw
     }
+
 }

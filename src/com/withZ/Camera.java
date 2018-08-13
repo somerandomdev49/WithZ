@@ -1,16 +1,16 @@
-package com.mikeDev49;
+package com.withZ;
 
 import java.util.ArrayList;
 
 public class Camera {
-    public Position position = new Position();
+    public Vector3D position = new Vector3D();
     public int screenDistance = 100;
     public World world;
     public  Camera() {}
-    public Camera(Position position) {
+    public Camera(Vector3D position) {
         this.position = position;
     }
-    public Camera(Position position, int screenDistance) {
+    public Camera(Vector3D position, int screenDistance) {
         this.position = position;
         this.screenDistance = screenDistance;
     }
@@ -27,6 +27,7 @@ public class Camera {
     }
     private ArrayList<Vertex> RenderObject(Object obj) {
         //System.out.print("ObjectRender");
+        System.out.println("RenderObject method:");
         ArrayList<Vertex> vertices = new ArrayList<>();
         System.out.println("How many vertices in object: " + obj.vertices.size());
         for (int v=0;v<obj.vertices.size();v++) {
@@ -35,15 +36,15 @@ public class Camera {
                     (this.position.x - vertex.position.x)) / (vertex.position.z - this.position.z);
             int y = this.position.y - (this.screenDistance *
                     (this.position.y - vertex.position.y)) / (vertex.position.z - this.position.z);
-            System.out.println("Rendered x and y for vertex");
-            Vertex i = new Vertex(new Position(x, y), vertex.vertex);
-            if (v != 0) {
-                vertex.renderedConnection = vertices.get(v-1);
-            }
+            System.out.println("Generated rendered x and y for vertex");
+            Vertex i = new Vertex(new Vector3D(x, y), vertex.vertices, true);
+            vertex.Render = i;
             vertices.add(i);
 
+
         }
-        vertices.get(0).renderedConnection = vertices.get(vertices.size() - 1);
+        System.out.println("Ended RenderObject method:");
         return vertices;
+
     }
 }
