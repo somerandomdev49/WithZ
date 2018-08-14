@@ -4,11 +4,11 @@ For now you can only move the camera using WASD and Q to go up and E to go down.
 ### how to use:
 (example in file main.java)
 ```java
-import com.withZ.*;
-import com.withZ.Meshes.*;
+import com.lib.withZ.*;
+import com.lib.withZ.Meshes.*;
 import java.util.ArrayList;
 
-class YourFirstGameOnWithZ {
+class YourFirstGameWithZ {
     Camera cam = new Camera(new Vector3D(0, 0, -50)); // Creating Camera and setting it's position
     ArrayList<Object> objects = new ArrayList<>(); // ArrayList of all objects
     objects.add(new Box(new Vector3D(0, 0, 0), new Vector3D(1, 1, 1))); // Creating Box Mesh.
