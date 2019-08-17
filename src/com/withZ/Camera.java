@@ -32,10 +32,8 @@ public class Camera {
         System.out.println("How many vertices in object: " + obj.vertices.size());
         for (int v=0;v<obj.vertices.size();v++) {
             Vertex vertex = obj.vertices.get(v);
-            int x = this.position.x - (this.screenDistance *
-                    (this.position.x - vertex.position.x)) / (vertex.position.z - this.position.z);
-            int y = this.position.y - (this.screenDistance *
-                    (this.position.y - vertex.position.y)) / (vertex.position.z - this.position.z);
+            int x = vertex.position.x / vertex.position.z;
+            int y = vertex.position.y / vertex.position.z;
             System.out.println("Generated rendered x and y for vertex");
             Vertex i = new Vertex(new Vector3D(x, y), vertex.vertices, true);
             vertex.Render = i;
