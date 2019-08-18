@@ -4,15 +4,13 @@ import java.util.ArrayList;
 
 public class Vertex {
     public Vector3D position;
+    /* public Color color */
 
     public Vertex(Vector3D position) {
         this.position = position;
-        this.vertices = vertices;
-
     }
-    public Vertex(Vector3D position, boolean isRendered) {
+    public Vertex(Vector3D position) {
         this.position = position;
-        this.isRendered = isRendered;
     }
 
 }
