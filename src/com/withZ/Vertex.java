@@ -4,12 +4,8 @@ import java.util.ArrayList;
 
 public class Vertex {
     public Vector3D position;
-    public ArrayList<Vertex> vertices = new ArrayList<>(100);
-    public Vertex renderedConnection;
-    public Vertex Render;
-    public boolean isRendered = true;
 
-    public Vertex(Vector3D position, ArrayList<Vertex> vertices, boolean isRendered) {
+    public Vertex(Vector3D position) {
         this.position = position;
         this.vertices = vertices;
 
