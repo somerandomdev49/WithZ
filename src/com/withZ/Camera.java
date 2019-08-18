@@ -10,15 +10,16 @@ public class Camera {
     public Camera(Vector3D position) {
         this.position = position;
     }
-    public Camera(Vector3D position, int screenDistance) {
+    public Camera(Vector3D position, int clipDistance) {
         this.position = position;
-        this.screenDistance = screenDistance;
+        this.clipDistance = clipDinstance; // not used for now.
     }
     public ArrayList<ArrayList<Vertex>> Render() {
         //System.out.print("Render");
 
         // Render method.
-        ArrayList<ArrayList<Vertex>> outer = new ArrayList<>();
+        ArrayList<ArrayList<Vertex
+           >> outer = new ArrayList<>();
         for (Object obj : world.objects) {
             outer.add(RenderObject(obj));
         }
@@ -35,11 +36,8 @@ public class Camera {
             int x = vertex.position.x / vertex.position.z;
             int y = vertex.position.y / vertex.position.z;
             System.out.println("Generated rendered x and y for vertex");
-            Vertex i = new Vertex(new Vector3D(x, y), vertex.vertices, true);
-            vertex.Render = i;
+            Vertex i = new Vertex3D(new Vector3D(x, y));
             vertices.add(i);
-
-
         }
         System.out.println("Ended RenderObject method:");
         return vertices;
